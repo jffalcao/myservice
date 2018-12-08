@@ -1,12 +1,16 @@
-var express = require('express');
-var app = express();
+const http = require('http');
 
-app.get('/', function (req, res) {
-    res.json({'\nmsg': 'myservice is up and running correctly!\n'});
+// const hostname = '127.0.0.1';
+const hostname = '0.0.0.0';
+
+const port = 3000;
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('\nService: myservice is up and running correctly!\n\n');
 });
 
-var port = process.env.port || 3000;
-
-app.listen(port, function () {
-    console.log('Server Started at ' + port);
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
 });
