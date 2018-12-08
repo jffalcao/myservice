@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 
 app.get('/', function (req, res) {
-    res.json({'msg': 'myservice is up and running correctly!'});
+    res.json({'\nmsg': 'myservice is up and running correctly!\n'});
 });
 
 var port = process.env.port || 3000;
