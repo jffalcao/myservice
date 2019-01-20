@@ -1,2 +1,2 @@
 # myservice
-example for Addison-Wesley Docer Orchestration video 
+example for Addison-Wesley Docker Orchestration video 
